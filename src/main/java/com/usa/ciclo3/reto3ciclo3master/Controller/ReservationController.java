@@ -4,6 +4,7 @@ import com.usa.ciclo3.reto3ciclo3master.entities.Category;
 import com.usa.ciclo3.reto3ciclo3master.entities.Reservation;
 import com.usa.ciclo3.reto3ciclo3master.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,11 +17,13 @@ public class ReservationController {
     private ReservationService reservationService;
 
     @GetMapping("/all")
+    @ResponseStatus(HttpStatus.CREATED)
     public List<Reservation> getAll(){
         return reservationService.getAll();
     }
 
     @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
     public Reservation save(@RequestBody Reservation p){
         return reservationService.save(p);
     }

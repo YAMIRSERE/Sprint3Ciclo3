@@ -39,11 +39,11 @@ public class CabinService {
         if (c.getId()!=null){
             Optional<Cabin> q = cabinRepository.getCabin(c.getId());
             if(q.isPresent()){
-                if(c.getBrand()!=null){
-                    q.get().setBrand(c.getBrand());
-                }
                 if(c.getName()!=null){
                     q.get().setName(c.getName());
+                }
+                if(c.getBrand()!=null){
+                    q.get().setBrand(c.getBrand());
                 }
                 if(c.getRooms()!=null){
                     q.get().setRooms(c.getRooms());
