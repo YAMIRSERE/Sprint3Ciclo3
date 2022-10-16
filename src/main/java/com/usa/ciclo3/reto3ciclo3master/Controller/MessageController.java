@@ -1,5 +1,6 @@
 package com.usa.ciclo3.reto3ciclo3master.Controller;
 
+import com.usa.ciclo3.reto3ciclo3master.entities.Admin;
 import com.usa.ciclo3.reto3ciclo3master.entities.Category;
 import com.usa.ciclo3.reto3ciclo3master.entities.Message;
 import com.usa.ciclo3.reto3ciclo3master.service.MessageService;
@@ -25,6 +26,16 @@ public class MessageController {
     @ResponseStatus(HttpStatus.CREATED)
     public Message save(@RequestBody Message p){
         return messageService.save(p);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update (@RequestBody Message p){return messageService.update(p);}
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return messageService.delete(id);
     }
 
 }

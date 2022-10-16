@@ -1,5 +1,6 @@
 package com.usa.ciclo3.reto3ciclo3master.Controller;
 
+import com.usa.ciclo3.reto3ciclo3master.entities.Admin;
 import com.usa.ciclo3.reto3ciclo3master.entities.Category;
 import com.usa.ciclo3.reto3ciclo3master.entities.Client;
 import com.usa.ciclo3.reto3ciclo3master.service.ClientService;
@@ -25,5 +26,15 @@ public class ClientController {
     @ResponseStatus(HttpStatus.CREATED)
     public Client save(@RequestBody Client p){
         return clientService.save(p);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update (@RequestBody Client p){return clientService.update(p);}
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return clientService.delete(id);
     }
 }

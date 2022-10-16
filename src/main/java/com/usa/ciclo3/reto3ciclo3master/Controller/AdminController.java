@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Admin")
@@ -25,6 +26,16 @@ public class AdminController {
     @ResponseStatus(HttpStatus.CREATED)
     public Admin save(@RequestBody Admin p){
         return adminService.save(p);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Admin update (@RequestBody Admin p){return adminService.update(p);}
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+        return adminService.delete(id);
     }
 
 }
