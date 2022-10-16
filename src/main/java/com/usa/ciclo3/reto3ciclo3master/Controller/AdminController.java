@@ -17,7 +17,6 @@ public class AdminController {
     private AdminService adminService;
 
     @GetMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
     public List<Admin> getAll(){
         return adminService.getAll();
     }
@@ -27,4 +26,5 @@ public class AdminController {
     public Admin save(@RequestBody Admin p){
         return adminService.save(p);
     }
+
 }

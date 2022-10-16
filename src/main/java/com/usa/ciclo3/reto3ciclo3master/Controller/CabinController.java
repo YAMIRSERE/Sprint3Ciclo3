@@ -16,7 +16,6 @@ public class CabinController {
     private CabinService cabinService;
 
     @GetMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
     public List<Cabin> getAll(){
         return cabinService.getAll();
     }

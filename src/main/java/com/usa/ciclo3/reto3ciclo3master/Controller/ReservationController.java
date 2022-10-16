@@ -17,7 +17,6 @@ public class ReservationController {
     private ReservationService reservationService;
 
     @GetMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
     public List<Reservation> getAll(){
         return reservationService.getAll();
     }

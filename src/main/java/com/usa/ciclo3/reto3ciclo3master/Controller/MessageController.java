@@ -17,7 +17,6 @@ public class MessageController {
     private MessageService messageService;
 
     @GetMapping("/all")
-    @ResponseStatus(HttpStatus.CREATED)
     public List<Message> getAll(){
         return messageService.getAll();
     }
